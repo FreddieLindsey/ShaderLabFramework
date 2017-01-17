@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  mac-intel:
+    build: 
+      context: .
+      dockerfile: Dockerfile.mac-intel
+    image: freddielindsey/shaderframeworkimperial
