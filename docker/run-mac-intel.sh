@@ -1,7 +1,10 @@
 #!/bin/bash
 
-cd /shaderframework || exit 1
+cp -r /shaderframework /shaderframework-working || exit 1
+cd /shaderframework-working || exit 2
 
-cmake . || exit 2
+echo -e "\nCMAKE\n"
+cmake . || exit 3
 
-make || exit 3
+echo -e "\nMAKE\n"
+make || exit 4

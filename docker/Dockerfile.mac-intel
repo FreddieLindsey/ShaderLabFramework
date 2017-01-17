@@ -20,8 +20,9 @@ RUN tar -xvf glew.tgz
 WORKDIR /repositories/glew-2.0.0
 RUN cmake ./build/cmake
 RUN make -j 8
+RUN make install
 
-WORKDIR /shaderframework
+WORKDIR /
 
 COPY ./run-mac-intel.sh /
 RUN chmod +x /run-mac-intel.sh
