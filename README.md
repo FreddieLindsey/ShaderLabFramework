@@ -23,31 +23,38 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
 
 This tool was inspired by ['Shader Maker'](http://cgvr.cs.uni-bremen.de/teaching/shader_maker/), a Computer Graphics teaching tool developed by the team of Prof.Dr.Gabriel Zachmann, 	University of Bremen. The Copyright holders of 'Shader Maker' granted permission to use their code. The GLSL shader editor syntax highlighter classes are based on the implementation provided by 'Shader Maker'.
 
 ## Dependencies:
 - [Qt5](https://www.qt.io/download/)
-- [CMake](https://cmake.org/download/) 
+- [CMake](https://cmake.org/download/)
 - [GLEW](http://glew.sourceforge.net/)
 
 ## Compile and run:
 
-git clone https://github.com/bkainz/ShaderLabFramework.git
+```
+$ git clone https://github.com/bkainz/ShaderLabFramework.git
+$ cd ShaderLabFramework
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ ./ShaderLabFramework
+```
 
-cd ShaderLabFramework
+### Running on Docker
 
-mkdir build
+- Install Docker
+- Install XQuartz (Mac only)
 
-cd build
+From the root of this project on your machine
 
-cmake ..
-
-make
-
-./ShaderLabFramework
+```
+$ docker-compose up -d
+```
 
 ## Features:
 - render window
@@ -62,9 +69,9 @@ make
 - screenshot tool
 - Camera parameter adjustments
 - direct manipulation widget for Model, View and Projection Matrices
-- automatic evaluation of user uniforms in uniform editor; 
+- automatic evaluation of user uniforms in uniform editor;
   default material and matrix uniforms are ignored
-- simple numeric material editor 
+- simple numeric material editor
 - GPU info output
 - saving and loading of whole shader pipelines or individual shaders
 - full OpenGL 4.x support
@@ -91,11 +98,11 @@ make
 <img src="https://www.doc.ic.ac.uk/~bkainz/teaching/CO317/4alevel0.jpg" alt="Geometry subdivision level 0" width="250"/>
 <img src="https://www.doc.ic.ac.uk/~bkainz/teaching/CO317/4alevel2.jpg" alt="Geometry subdivision level 2" width="250"/>
 
-### Texture 
+### Texture
 <img src="https://www.doc.ic.ac.uk/~bkainz/teaching/CO317/6a1.jpg" alt="Texture" width="250"/>
 <img src="https://www.doc.ic.ac.uk/~bkainz/teaching/CO317/6a2.jpg" alt="Texture" width="250"/>
 
-### Bump mapping 
+### Bump mapping
 <img src="https://www.doc.ic.ac.uk/~bkainz/teaching/CO317/6b.jpg" alt="Bump mapping" width="250"/>
 
 ### Render-to-texture, screen aligned image plane shading (simple blur example)
@@ -104,4 +111,3 @@ make
 ### Simple ray tracing
 <img src="https://www.doc.ic.ac.uk/~bkainz/teaching/CO317/7a.jpg" alt="Simple ray tracing" width="250"/>
 <img src="https://www.doc.ic.ac.uk/~bkainz/teaching/CO317/7b_50MCrays.jpg" alt="Simple monte-carlo ray tracing" width="250"/>
-

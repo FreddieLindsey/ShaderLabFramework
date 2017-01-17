@@ -6,6 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile.mac-intel
     command: /bin/bash -c /run-mac-intel.sh
+    environment:
+      DISPLAY: $DISPLAY
     image: freddielindsey/shaderframeworkimperial:mac-intel
+    privileged: true
     volumes:
       - ..:/shaderframework
