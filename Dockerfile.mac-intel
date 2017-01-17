@@ -5,4 +5,8 @@ MAINTAINER "Freddie Lindsey" freddie.a.lindsey@gmail.com
 RUN apt-get update && apt-get install -y \
     cmake
 
+WORKDIR /shaderframework
+
+COPY . .
+
 CMD ["echo", "hello world"]
