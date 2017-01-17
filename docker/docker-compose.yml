@@ -1,0 +1,5 @@
+version: '2'
+
+services:
+  mac-intel:
+    image: freddielindsey/shaderframeworkimperial:mac-intel-latest

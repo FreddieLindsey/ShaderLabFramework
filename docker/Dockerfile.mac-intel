@@ -1,0 +1,27 @@
+FROM ubuntu:16.04
+
+MAINTAINER "Freddie Lindsey" freddie.a.lindsey@gmail.com
+
+ENV TERM xterm
+
+RUN apt-get update && apt-get install -y build-essential
+RUN apt-get update && apt-get install -y cmake
+RUN apt-get update && apt-get install -y qt5-default
+RUN apt-get update && apt-get install -y curl
+
+# For GLEW
+RUN apt-get update && apt-get install -y libxmu-dev libxi-dev libgl-dev libosmesa-dev
+
+# Install GLEW
+RUN mkdir -p /repositories
+RUN curl -L -o /repositories/glew.tgz "https://downloads.sourceforge.net/project/glew/glew/2.0.0/glew-2.0.0.tgz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fglew%2Ffiles%2Fglew%2F2.0.0%2F&ts=1484663489&use_mirror=kent"
+WORKDIR /repositories
+RUN tar -xvf glew.tgz
+WORKDIR /repositories/glew-2.0.0
+RUN cmake ./build/cmake
+RUN make -j 8
+
+WORKDIR /shaderframework
+
+COPY ./run-mac-intel.sh /
+RUN chmod +x /run-mac-intel.sh

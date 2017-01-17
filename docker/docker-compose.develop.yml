@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  mac-intel:
+    build:
+      context: .
+      dockerfile: Dockerfile.mac-intel
+    command: /bin/bash -c /run-mac-intel.sh
+    image: freddielindsey/shaderframeworkimperial:mac-intel
+    volumes:
+      - ..:/shaderframework
