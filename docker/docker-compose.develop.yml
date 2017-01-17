@@ -7,8 +7,9 @@ services:
       dockerfile: Dockerfile.mac-intel
     command: /bin/bash -c /run-mac-intel.sh
     environment:
-      DISPLAY: $DISPLAY
+      DISPLAY: "$ip:0"
     image: freddielindsey/shaderframeworkimperial:mac-intel
     privileged: true
     volumes:
       - ..:/shaderframework
+      - /tmp/.X11-unix:/tmp/.X11-unix
