@@ -12,9 +12,19 @@ compiler:
   - clang
   - gcc
 
+addons:
+  apt:
+    packages:
+      - cmake
+      - make
+      - gcc-4.8
+      - g++-4.8
+      - qt5-default
+      - libglew-dev
+
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update     ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install qt5; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then scripts/install_mac.sh   ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then scripts/install_linux.sh ; fi
 
 install:
   - cmake .

@@ -5,3 +5,4 @@ CMakeCache.txt
 ShaderLabFramework*
 cmake_install.cmake
 ui_*.h
+moc_*.cpp
