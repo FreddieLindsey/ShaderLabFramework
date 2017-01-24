@@ -4,7 +4,7 @@ matrix:
       osx_image: xcode8.2
     - os: linux
       dist: trusty
-      sudo: false
+      sudo: required
 
 language: c
 
@@ -19,8 +19,8 @@ addons:
       - libglew-dev
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then scripts/install_mac.sh   ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then scripts/install_linux.sh ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then      scripts/install_mac.sh   ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo scripts/install_linux.sh ; fi
 
 install:
   - cmake .
