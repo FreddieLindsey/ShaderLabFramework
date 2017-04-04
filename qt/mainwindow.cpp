@@ -41,6 +41,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     format.setSamples(16);
     ui->m_GLWidget->setFormat(format);
 
+    qDebug() << format << endl;
+    qDebug() << glGetString(GL_VERSION) << endl;
+
     this->resize(QDesktopWidget().availableGeometry(this).size().width() * 0.5,
         QDesktopWidget().availableGeometry(this).size().height() * 0.97);
 
@@ -133,4 +136,3 @@ void MainWindow::updateMaterialTab()
     }
 
 }
-

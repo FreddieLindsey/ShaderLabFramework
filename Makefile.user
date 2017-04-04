@@ -1,4 +1,10 @@
+LDFLAGS_M = "-L/usr/local/opt/qt5/lib $(LDFLAGS)"
+CFLAGS_M = "-I/usr/local/opt/qt5/include $(CFLAGS)"
+
 .PHONY: clean
 
 clean:
 	$(RM) -f CMakeCache.txt Makefile
+
+mac: clean
+	LDFLAGS=$(LDFLAGS_M) CFLAGS=$(CFLAGS_M) cmake $(PWD)/..
